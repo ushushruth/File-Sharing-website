@@ -14,6 +14,21 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.liquid-btn1 {
+  background: #fff;
+  color: #000;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+}
+
 body {
   margin: 0;
   display: block;
@@ -50,6 +65,7 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 /* Responsive Content Container */
@@ -151,6 +167,7 @@ input[type="text"]:focus {
   color: #888;
   padding-left: 28px;
   transition: color 0.2s;
+  white-space: nowrap;
 }
 
 .liquid-radio:hover {
@@ -238,11 +255,41 @@ input[type="text"]:focus {
   font-weight: 500;
 }
 
+/* Desktop Controls Row (Default, preserves original styles) */
+.controls-row {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 40px;
+  margin-left: 250px;
+  /* Original user value */
+}
+
+.copyButton {}
+
+.copyButton:hover {
+  translate: 0 -2px;
+
+}
+
 /* Mobile Responsiveness for Typography */
 @media (max-width: 600px) {
   h2 {
     font-size: 3rem;
     /* Still big, but fits mobile */
+  }
+}
+
+/* Mobile Responsiveness for Controls */
+@media (max-width: 768px) {
+  .controls-row {
+    flex-direction: column;
+    margin-left: 0;
+    gap: 20px;
+    width: 90%;
   }
 }
 
@@ -265,6 +312,33 @@ input[type="text"]:focus {
   letter-spacing: 0.05em;
   margin: 30px 0;
   text-align: center;
-  color: #4ade80;
   opacity: 0.9;
+}
+
+/* Transfer GIF (Absolute Position to prevent layout shift) */
+.transfer-gif {
+  height: 400px;
+  position: absolute;
+  left: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+@media (max-width: 1200px) {
+  .transfer-gif {
+    height: 180px;
+    left: 2%;
+  }
+}
+
+@media (max-width: 900px) {
+  .transfer-gif {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 150px;
+  }
 }
