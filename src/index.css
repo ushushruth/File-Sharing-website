@@ -1,0 +1,270 @@
+:root {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  line-height: 1.2;
+  font-weight: 400;
+
+  color-scheme: dark;
+  color: #eee;
+  background-color: #0a0a12;
+  /* Minimal Black/Purple Shade */
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: block;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #000;
+}
+
+/* Typography Overrides */
+h1,
+h2,
+h3 {
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: #fff;
+  margin: 0;
+}
+
+h2 {
+  font-size: 5rem;
+  /* Massive Text */
+  line-height: 0.9;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Minimalist Background Container (Antigravity Style) */
+.radiant-bg {
+  background-color: #000;
+  background-image: radial-gradient(circle at 0% 0%, #0e2a47 0%, #000000 70%);
+  min-height: 100vh;
+  width: 100%;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Responsive Content Container */
+.app-container {
+  width: 90%;
+  max-width: 600px;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Typographic Input (Room ID) */
+input[type="text"] {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #333;
+  padding: 10px 0;
+  font-size: 2rem;
+  /* Large typography */
+  font-weight: 700;
+  color: #fff;
+  width: 100%;
+  text-align: center;
+  border-radius: 0;
+  outline: none;
+  transition: border-color 0.2s;
+  font-family: inherit;
+  margin-bottom: 20px;
+  /* Spacing */
+}
+
+input[type="text"]::placeholder {
+  color: #444;
+  font-weight: 400;
+}
+
+input[type="text"]:focus {
+  border-bottom-color: #fff;
+}
+
+/* Minimalist Button (Reversed Logic) */
+/* Default: White Button, Black Text */
+.liquid-btn {
+  background: #fff;
+  color: #000;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Hover: Black (or Dark) Button, White Text */
+.liquid-btn:hover {
+  background: transparent;
+  color: #fff;
+  border-color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.1);
+}
+
+.liquid-btn:active {
+  transform: translateY(0);
+}
+
+.liquid-btn:disabled {
+  background: #333;
+  border-color: #333;
+  color: #666;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Minimalist Radio Group */
+.liquid-radio-group {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  margin: 30px 0;
+  padding: 0;
+  background: transparent;
+  backdrop-filter: none;
+  border: none;
+}
+
+.liquid-radio {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #888;
+  padding-left: 28px;
+  transition: color 0.2s;
+}
+
+.liquid-radio:hover {
+  color: #fff;
+}
+
+.liquid-radio input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Custom Checkmark (Clean Circle) */
+.checkmark {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: transparent;
+  border: 2px solid #555;
+  border-radius: 50%;
+  transition: all 0.2s;
+}
+
+.liquid-radio:hover input~.checkmark {
+  border-color: #fff;
+}
+
+.liquid-radio input:checked~.checkmark {
+  border-color: #fff;
+  background-color: #000;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.liquid-radio input:checked~.checkmark:after {
+  display: block;
+}
+
+.liquid-radio .checkmark:after {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+/* Drop Zone Styles (Minimalist Dark) */
+.drop-zone {
+  border: 2px dashed #444;
+  border-radius: 12px;
+  padding: 60px 40px;
+  text-align: center;
+  margin-bottom: 30px;
+  background: rgba(255, 255, 255, 0.02);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.drop-zone:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: #666;
+}
+
+.drop-zone.active {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: #fff;
+  transform: scale(1.01);
+}
+
+.drop-zone p {
+  margin: 0;
+  color: #888;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* Mobile Responsiveness for Typography */
+@media (max-width: 600px) {
+  h2 {
+    font-size: 3rem;
+    /* Still big, but fits mobile */
+  }
+}
+
+/* Selected File Typography */
+.file-name-text {
+  font-size: 3rem;
+  /* "More bigger" */
+  font-weight: 800;
+  color: #fff;
+  word-break: break-word;
+  line-height: 1.1;
+  text-align: center;
+}
+
+/* Status Typography */
+.status-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 30px 0;
+  text-align: center;
+  color: #4ade80;
+  opacity: 0.9;
+}
